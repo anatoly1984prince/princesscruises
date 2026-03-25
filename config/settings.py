@@ -27,7 +27,6 @@ class Settings:
     NAVIGATION_TIMEOUT: int = int(os.getenv("NAVIGATION_TIMEOUT", "60000"))
 
     # ── Recording ───────────────────────────────────────────────────────────
-    VIDEO_MODE: str = os.getenv("VIDEO_MODE", "retain-on-failure")
     TRACE_MODE: str = os.getenv("TRACE_MODE", "retain-on-failure")
 
     # ── Test credentials ────────────────────────────────────────────────────

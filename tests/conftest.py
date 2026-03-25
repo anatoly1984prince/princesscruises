@@ -28,13 +28,13 @@ from pages.country_selector_page import CountrySelectorPage
 from pages.booking_cabin_page import BookingCabinPage
 from pages.booking_guests_page import BookingGuestsPage
 from pages.booking_payment_page import BookingPaymentPage
+from pages.booking_confirmation_page import BookingConfirmationPage
 
 REPORTS_DIR = Path(__file__).parent.parent / "reports"
 SCREENSHOTS_DIR = REPORTS_DIR / "screenshots"
 TRACES_DIR = REPORTS_DIR / "traces"
-VIDEOS_DIR = REPORTS_DIR / "videos"
 
-for d in (SCREENSHOTS_DIR, TRACES_DIR, VIDEOS_DIR):
+for d in (SCREENSHOTS_DIR, TRACES_DIR):
     d.mkdir(parents=True, exist_ok=True)
 
 
@@ -64,7 +64,6 @@ def context(browser: Browser) -> Generator[BrowserContext, None, None]:
     ctx = browser.new_context(
         viewport={"width": settings.VIEWPORT_WIDTH, "height": settings.VIEWPORT_HEIGHT},
         locale="en-US",
-        record_video_dir=str(VIDEOS_DIR) if settings.VIDEO_MODE != "off" else None,
     )
     ctx.set_default_timeout(settings.DEFAULT_TIMEOUT)
     ctx.set_default_navigation_timeout(settings.NAVIGATION_TIMEOUT)
@@ -294,3 +293,8 @@ def booking_guests_page(page: Page) -> BookingGuestsPage:
 @pytest.fixture
 def booking_payment_page(page: Page) -> BookingPaymentPage:
     return BookingPaymentPage(page)
+
+
+@pytest.fixture
+def booking_confirmation_page(page: Page) -> BookingConfirmationPage:
+    return BookingConfirmationPage(page)

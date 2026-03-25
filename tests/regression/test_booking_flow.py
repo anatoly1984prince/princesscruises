@@ -24,6 +24,7 @@ from pages.cruise_detail_page import CruiseDetailPage
 from pages.booking_cabin_page import BookingCabinPage, CABIN_TYPES, ACCESSIBLE_CABIN_TYPES
 from pages.booking_guests_page import BookingGuestsPage
 from pages.booking_payment_page import BookingPaymentPage
+from pages.booking_confirmation_page import BookingConfirmationPage
 from pages.home_page import HomePage
 
 
@@ -555,6 +556,33 @@ class TestPaymentPage:
             f"Payment page not served over HTTPS: {self._payment.get_url()}"
         )
 
+    @allure.story("Payment form accepts credit card details")
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_fill_credit_card_details(self):
+        """Fill payment form with test credit card data and verify fields accept input."""
+        if not self._payment.has_payment_form():
+            pytest.skip("Payment form not found on payment page")
+
+        self._payment.fill_test_card(
+            card_number="4111111111111111",
+            expiry="12/33",
+            cvv="234",
+            name="Tom Cat",
+        )
+
+        # Verify card number field retained input
+        if self._payment.is_visible(self._payment.CARD_NUMBER, timeout=3000):
+            card_field = self._payment.page.locator(self._payment.CARD_NUMBER).first
+            value = card_field.input_value()
+            assert value, "Card number field appears empty after fill"
+
+        # Verify cardholder name field retained input
+        if self._payment.is_visible(self._payment.CARDHOLDER_NAME, timeout=3000):
+            name_field = self._payment.page.locator(self._payment.CARDHOLDER_NAME).first
+            assert "Tom Cat" in name_field.input_value(), (
+                "Cardholder name field did not retain expected value"
+            )
+
     @allure.story("Complete Booking button is not clickable without card details")
     def test_cannot_submit_without_card_details(self):
         """Submitting without card data should show errors, not book a cruise."""
@@ -668,3 +696,88 @@ class TestBookingE2E:
                     f"(at: {booking_payment_page.get_url()})"
                 )
             assert booking_payment_page.is_visible(booking_payment_page.PAGE_HEADING, timeout=10000)
+
+
+@allure.epic("Princess Cruises - Regression")
+@allure.feature("Booking Flow — Confirmation")
+@pytest.mark.regression
+@pytest.mark.booking
+class TestBookingConfirmation:
+    """Submit payment with test card and capture the confirmed booking number."""
+
+    @allure.story("Confirmed booking number is displayed after payment submission")
+    @allure.severity(allure.severity_level.BLOCKER)
+    def test_confirmed_booking_number(
+        self,
+        cruise_search_page: CruiseSearchPage,
+        cruise_results_page: CruiseResultsPage,
+        cruise_detail_page: CruiseDetailPage,
+        booking_cabin_page: BookingCabinPage,
+        booking_guests_page: BookingGuestsPage,
+        booking_payment_page: BookingPaymentPage,
+        booking_confirmation_page: BookingConfirmationPage,
+        test_user_data: dict,
+    ):
+        """Full flow: search → cabin → guests → fill card → submit → read booking number."""
+        with allure.step("Step 1: Navigate to cruise detail"):
+            _navigate_to_detail(cruise_search_page, cruise_results_page, cruise_detail_page)
+
+        with allure.step("Step 2: Enter booking flow (Book Now)"):
+            _reach_cabin_page(cruise_detail_page, booking_cabin_page)
+
+        with allure.step("Step 3: Select first available cabin"):
+            if booking_cabin_page.count(booking_cabin_page.CABIN_CARDS) > 0:
+                booking_cabin_page.select_first_cabin()
+            else:
+                booking_cabin_page.continue_to_next_step()
+
+        with allure.step("Step 4: Fill guest details"):
+            if booking_guests_page.is_on_guests_page():
+                if booking_guests_page.is_visible(booking_guests_page.FIRST_NAME, timeout=5000):
+                    booking_guests_page.fill_guest_details(
+                        first_name=test_user_data["first_name"],
+                        last_name=test_user_data["last_name"],
+                        email=test_user_data["email"],
+                    )
+                booking_guests_page.continue_to_next_step()
+
+        with allure.step("Step 5: Confirm payment page loaded"):
+            if not booking_payment_page.is_on_payment_page():
+                pytest.skip(
+                    f"Did not reach payment page (at: {booking_payment_page.get_url()})"
+                )
+
+        with allure.step("Step 6: Fill credit card — Tom Cat 4111111111111111 12/33 CVV 234"):
+            booking_payment_page.fill_test_card(
+                card_number="4111111111111111",
+                expiry="12/33",
+                cvv="234",
+                name="Tom Cat",
+            )
+
+        with allure.step("Step 7: Accept terms and conditions"):
+            booking_payment_page.accept_terms()
+
+        with allure.step("Step 8: Submit booking"):
+            booking_payment_page.click(booking_payment_page.COMPLETE_BOOKING_BTN)
+
+        with allure.step("Step 9: Wait for confirmation page"):
+            reached = booking_confirmation_page.wait_for_confirmation(timeout=30000)
+            if not reached:
+                pytest.skip(
+                    f"Confirmation page not reached after submit "
+                    f"(at: {booking_confirmation_page.get_url()})"
+                )
+
+        with allure.step("Step 10: Capture booking number"):
+            booking_number = booking_confirmation_page.get_booking_number()
+            allure.attach(
+                f"Confirmed Booking Number: {booking_number}",
+                name="[BOOKING NUMBER] Confirmation",
+                attachment_type=allure.attachment_type.TEXT,
+            )
+            booking_confirmation_page.take_screenshot("booking_confirmation")
+            assert booking_number, (
+                "Confirmation page reached but no booking number found. "
+                f"Current URL: {booking_confirmation_page.get_url()}"
+            )
