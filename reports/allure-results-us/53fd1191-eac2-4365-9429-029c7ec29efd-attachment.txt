@@ -1,0 +1,6 @@
+
+Reached stateroom-summary: https://www.princess.com/cruise-search/stateroom-summary/
+Log In href: https://www.princess.com/my-princess/login/?src=cruise-search
+Modal did not open — navigating directly to login page
+Login page URL: https://www.princess.com/my-princess/account-login/?src=cruise-search
+URL after login: https://www.princess.com/my-princess/account-login/?src=cruise-search

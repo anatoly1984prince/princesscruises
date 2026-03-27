@@ -1,0 +1,46 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-9.0.2, pluggy-1.6.0 -- C:\Python314\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.14.3', 'Platform': 'Windows-10-10.0.19045-SP0', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'allure-pytest': '2.15.3', 'Faker': '40.11.1', 'base-url': '2.1.0', 'html': '4.2.0', 'metadata': '3.1.1', 'playwright': '0.7.2', 'rerunfailures': '16.1', 'xdist': '3.8.0'}, 'JAVA_HOME': 'C:\\Program Files\\Java\\jdk-17', 'Base URL': ''}
+rootdir: C:\Users\prote\princess_automation
+configfile: pytest.ini
+plugins: allure-pytest-2.15.3, Faker-40.11.1, base-url-2.1.0, html-4.2.0, metadata-3.1.1, playwright-0.7.2, rerunfailures-16.1, xdist-3.8.0
+collecting ... collected 2 items
+
+tests/markets/us/test_booking.py::TestBookingConfirmation::test_confirmed_booking_number <- tests\regression\test_booking_flow.py SKIPPED [ 50%]
+tests/markets/us/test_booking.py::TestBookingLoginAndConfirm::test_booking_login_and_confirm <- tests\regression\test_booking_flow.py RERUN [100%]
+tests/markets/us/test_booking.py::TestBookingLoginAndConfirm::test_booking_login_and_confirm <- tests\regression\test_booking_flow.py FAILED [100%]
+
+================================== FAILURES ===================================
+__________ TestBookingLoginAndConfirm.test_booking_login_and_confirm __________
+tests\regression\test_booking_flow.py:1623: in test_booking_login_and_confirm
+    pytest.fail(
+E   Failed: Login failed — still on login page.
+E   Error: ''
+E   Credentials: asemenov@test.com / Test123$
+---------------------------- Captured stdout call -----------------------------
+
+Reached stateroom-summary: https://www.princess.com/cruise-search/stateroom-summary/
+Log In href: https://www.princess.com/my-princess/login/?src=cruise-search
+Modal did not open — navigating directly to login page
+Login page URL: https://www.princess.com/my-princess/account-login/?src=cruise-search
+URL after login: https://www.princess.com/my-princess/account-login/?src=cruise-search
+---------------------------- Captured stdout call -----------------------------
+
+Reached stateroom-summary: https://www.princess.com/cruise-search/stateroom-summary/
+Log In href: https://www.princess.com/my-princess/login/?src=cruise-search
+Modal did not open — navigating directly to login page
+Login page URL: https://www.princess.com/my-princess/account-login/?src=cruise-search
+URL after login: https://www.princess.com/my-princess/account-login/?src=cruise-search
+============================== warnings summary ===============================
+tests/markets/us/test_booking.py::TestBookingLoginAndConfirm::test_booking_login_and_confirm
+  C:\Users\prote\AppData\Roaming\Python\Python314\site-packages\pytest_html\selfcontained_report.py:31: UserWarning: Self-contained HTML report includes link to external resource: C:\Users\prote\princess_automation\reports\screenshots\tests_markets_us_test_booking.py__TestBookingLoginAndConfirm__test_booking_login_and_confirm.png
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- Generated html report: file:///C:/Users/prote/princess_automation/reports/html/report.html -
+=========================== short test summary info ===========================
+FAILED tests/markets/us/test_booking.py::TestBookingLoginAndConfirm::test_booking_login_and_confirm - Failed: Login failed — still on login page.
+Error: ''
+Credentials: asemenov@test.com / Test123$
+======== 1 failed, 1 skipped, 1 warning, 1 rerun in 1391.54s (0:23:11) ========

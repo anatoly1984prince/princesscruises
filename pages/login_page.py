@@ -15,6 +15,12 @@ class LoginPage(BasePage):
         "button:has-text('Sign In'), "
         "button:has-text('Log In')"
     )
+    GUEST_CHECKOUT_BTN = (
+        "button:has-text('Continue as Guest'), button:has-text('Guest Checkout'), "
+        "button:has-text('Book as Guest'), a:has-text('Continue as Guest'), "
+        "a:has-text('Guest'), button:has-text('Skip'), "
+        "[class*='guest'] button, [class*='guest-checkout']"
+    )
     CREATE_ACCOUNT_LINK = (
         "a:has-text('Create Account'), "
         "a:has-text('Register'), "
@@ -41,6 +47,17 @@ class LoginPage(BasePage):
         self.fill(self.PASSWORD_INPUT, password)
         self.click(self.SUBMIT_BTN)
         self.wait_for_load_state("domcontentloaded")
+
+    def has_guest_checkout(self) -> bool:
+        return self.is_visible(self.GUEST_CHECKOUT_BTN, timeout=5000)
+
+    @allure.step("Continue as guest (skip login)")
+    def continue_as_guest(self) -> bool:
+        if self.is_visible(self.GUEST_CHECKOUT_BTN, timeout=5000):
+            self.click(self.GUEST_CHECKOUT_BTN)
+            self.wait_for_load_state("domcontentloaded")
+            return True
+        return False
 
     @allure.step("Click Create Account")
     def click_create_account(self) -> None:

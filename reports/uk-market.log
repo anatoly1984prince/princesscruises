@@ -1,0 +1,13 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-9.0.2, pluggy-1.6.0 -- C:\Python314\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.14.3', 'Platform': 'Windows-10-10.0.19045-SP0', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'allure-pytest': '2.15.3', 'Faker': '40.11.1', 'base-url': '2.1.0', 'html': '4.2.0', 'metadata': '3.1.1', 'playwright': '0.7.2', 'rerunfailures': '16.1', 'xdist': '3.8.0'}, 'JAVA_HOME': 'C:\\Program Files\\Java\\jdk-17', 'Base URL': ''}
+rootdir: C:\Users\prote\princess_automation
+configfile: pytest.ini
+plugins: allure-pytest-2.15.3, Faker-40.11.1, base-url-2.1.0, html-4.2.0, metadata-3.1.1, playwright-0.7.2, rerunfailures-16.1, xdist-3.8.0
+collecting ... collected 1 item
+
+tests/markets/uk/test_booking.py::TestBookingUKGuest::test_uk_guest_booking_number SKIPPEDom/cruise-search/pay/)) [100%]
+
+- Generated html report: file:///C:/Users/prote/princess_automation/reports/html/report.html -
+======================= 1 skipped in 1109.02s (0:18:29) =======================

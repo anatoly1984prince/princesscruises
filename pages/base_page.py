@@ -35,6 +35,11 @@ class BasePage:
         "[class*='dialog'] button[aria-label*='close' i], "
         "button[data-dismiss='modal']"
     )
+    LIGHTBOX_CLOSE = (
+        "[class*='lightbox'] button[aria-label*='close' i], "
+        "[class*='lightbox'] button[class*='close'], "
+        "[class*='mfp-close'], .lightbox-overlay button"
+    )
 
     def __init__(self, page: Page) -> None:
         self.page = page

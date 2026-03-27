@@ -1,0 +1,44 @@
+
+AU results URL: https://www.princess.com/en-au/cruise-search/results?resType=C&guestCount=2
+Detail page URL: https://www.princess.com/itinerary-details/?voyageCode=A643
+URL after CONTINUE: https://www.princess.com/cruise-search/guest-count/?voyageCode=A643&guestCount=2&fareType=BESTVALUE&stateRoomId=I
+Filling guest 0: Tom Cat @ https://www.princess.com/cruise-search/guest-one/add/
+  Invalid required fields: []
+  All fields: [{'tag': 'INPUT', 'name': 'firstName', 'id': 'firstName', 'type': 'text', 'value': 'Tom', 'checked': False, 'required': False, 'valid': True}, {'tag': 'INPUT', 'name': 'middleName', 'id': 'middleName', 'type': 'text', 'value': '', 'checked': False, 'required': False, 'valid': True}, {'tag': 'INPUT', 'name': 'lastName', 'id': 'lastName', 'type': 'text', 'value': 'Cat', 'checked': False, 'required': False, 'valid': True}, {'tag': 'SELECT', 'name': 'suffix', 'id': 'suffix', 'type': 'select-one', 'value': '', 'checked': None, 'required': False, 'valid': True}, {'tag': 'SELECT', 'name': 'sex', 'id': 'sex', 'type': 'select-one', 'value': 'M', 'checked': None, 'required': False, 'valid': True}, {'tag': 'SELECT', 'name': 'birthMonth', 'id': 'birthMonth', 'type': 'select-one', 'value': '01', 'checked': None, 'required': False, 'valid': True}, {'tag': 'SELECT', 'name': 'birthDay', 'id': 'birthDay', 'type': 'select-one', 'value': '15', 'checked': None, 'required': False, 'valid': True}, {'tag': 'SELECT', 'name': 'birthYear', 'id': 'birthYear', 'type': 'select-one', 'value': '1980', 'checked': None, 'required': False, 'valid': True}, {'tag': 'INPUT', 'name': 'address1', 'id': 'address1', 'type': 'text', 'value': '1 Market Street', 'checked': False, 'required': False, 'valid': True}, {'tag': 'INPUT', 'name': 'address2', 'id': 'address2', 'type': 'text', 'value': '', 'checked': False, 'required': False, 'valid': True}, {'tag': 'SELECT', 'name': 'state', 'id': 'state', 'type': 'select-one', 'value': 'NSW', 'checked': None, 'required': False, 'valid': True}, {'tag': 'INPUT', 'name': 'city', 'id': 'city', 'type': 'text', 'value': 'Sydney', 'checked': False, 'required': False, 'valid': True}, {'tag': 'INPUT', 'name': 'zip', 'id': 'zip', 'type': 'text', 'value': '2000', 'checked': False, 'required': False, 'valid': True}, {'tag': 'INPUT', 'name': 'countryCode', 'id': 'countryCode', 'type': 'text', 'value': 'AUSTRALIA', 'checked': False, 'required': False, 'valid': True}, {'tag': 'SELECT', 'name': 'numberType', 'id': 'numberType', 'type': 'select-one', 'value': 'H', 'checked': None, 'required': False, 'valid': True}, {'tag': 'INPUT', 'name': 'number', 'id': 'number', 'type': 'tel', 'value': '3105550100', 'checked': False, 'required': False, 'valid': True}, {'tag': 'INPUT', 'name': 'email', 'id': 'email', 'type': 'email', 'value': 'rodriguezjennifer@example.net', 'checked': False, 'required': False, 'valid': True}, {'tag': 'INPUT', 'name': 'getPromotionalEmails', 'id': 'getPromotionalEmails', 'type': 'checkbox', 'value': '', 'checked': False, 'required': False, 'valid': True}]
+  SAVE & CONTINUE buttons found: 1
+  Visible buttons: ['Total\n$518.00', 'Back to Stateroom Selection\xa0', 'SAVE & CONTINUE', 'Passage Contract', 'Site Feedback', 'Hide']
+  Clicked SAVE & CONTINUE (regular)
+  Still at same URL — retrying SAVE & CONTINUE
+  Highlighted/errored fields: []
+After guest 0 fill: https://www.princess.com/cruise-search/guest-two/add/
+Filling guest 1: Jane Cat @ https://www.princess.com/cruise-search/guest-two/add/
+  Invalid required fields: []
+  All fields: [{'tag': 'INPUT', 'name': 'firstName', 'id': 'firstName', 'type': 'text', 'value': 'Jane', 'checked': False, 'required': False, 'valid': True}, {'tag': 'INPUT', 'name': 'middleName', 'id': 'middleName', 'type': 'text', 'value': '', 'checked': False, 'required': False, 'valid': True}, {'tag': 'INPUT', 'name': 'lastName', 'id': 'lastName', 'type': 'text', 'value': 'Cat', 'checked': False, 'required': False, 'valid': True}, {'tag': 'SELECT', 'name': 'suffix', 'id': 'suffix', 'type': 'select-one', 'value': '', 'checked': None, 'required': False, 'valid': True}, {'tag': 'SELECT', 'name': 'sex', 'id': 'sex', 'type': 'select-one', 'value': 'M', 'checked': None, 'required': False, 'valid': True}, {'tag': 'SELECT', 'name': 'birthMonth', 'id': 'birthMonth', 'type': 'select-one', 'value': '01', 'checked': None, 'required': False, 'valid': True}, {'tag': 'SELECT', 'name': 'birthDay', 'id': 'birthDay', 'type': 'select-one', 'value': '15', 'checked': None, 'required': False, 'valid': True}, {'tag': 'SELECT', 'name': 'birthYear', 'id': 'birthYear', 'type': 'select-one', 'value': '1980', 'checked': None, 'required': False, 'valid': True}, {'tag': 'SELECT', 'name': 'addressStatusForAllPax', 'id': 'addressStatusForAllPax', 'type': 'select-one', 'value': 'same', 'checked': None, 'required': False, 'valid': True}]
+  SAVE & CONTINUE buttons found: 1
+  Visible buttons: ['Total\n$518.00', 'Back to First Guest\xa0', 'SAVE & CONTINUE', 'Passage Contract', 'Site Feedback', 'Hide']
+  Clicked SAVE & CONTINUE (regular)
+  Still at same URL — retrying SAVE & CONTINUE
+  Highlighted/errored fields: []
+After guest 1 fill: https://www.princess.com/cruise-search/transfers/
+Guest loop: not on guests page at idx=2, url=https://www.princess.com/cruise-search/transfers/
+After guest loop URL: https://www.princess.com/cruise-search/transfers/
+Transfers page URL: https://www.princess.com/cruise-search/transfers/
+After transfers skip: https://www.princess.com/cruise-search/protection/
+MC FRAME false&cacheToken=1774579449514: ids=['nameOnCard', 'number', 'expiryMonth', 'expiryYear']
+Frame error: Locator.fill: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator("#expiryMonth").first
+    - locator resolved to <input type="text" tabindex="-1" class="sr-only" id="expiryMonth" aria-hidden="true"/>
+    - fill("12")
+  - attempting fill action
+
+MC FRAME false&cacheToken=1774579449550: ids=[]
+MC FRAME false&cacheToken=1774579449565: ids=[]
+MC FRAME false&cacheToken=1774579449581: ids=['securityCode']
+Frame error: Locator.fill: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator("#securityCode").first
+    - locator resolved to <input type="tel" maxlength="3" aria-label="CVV" id="securityCode" autocomplete="off" aria-required="true" aria-invalid="false" aria-describedby="err_cvv"/>
+    - fill("234")
+  - attempting fill action
+

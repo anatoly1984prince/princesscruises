@@ -1,0 +1,5 @@
+tests\regression\test_booking_flow.py:1623: in test_booking_login_and_confirm
+    pytest.fail(
+E   Failed: Login failed — still on login page.
+E   Error: ''
+E   Credentials: asemenov@test.com / Test123$

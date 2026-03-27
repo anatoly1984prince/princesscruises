@@ -43,7 +43,6 @@ class CruiseSearchPage(BasePage):
 
     def load(self) -> None:
         self.navigate(self.PATH)
-        self.wait_for_load_state("networkidle")
 
     @allure.step("Assert cruise search page loaded")
     def assert_loaded(self) -> None:

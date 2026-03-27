@@ -11,8 +11,12 @@ class CruiseDetailPage(BasePage):
     PRICE = "[class*='price'], [aria-label*='price' i]"
     BOOK_NOW_BTN = (
         "a:has-text('Book Now'), button:has-text('Book Now'), "
-        "a:has-text('Book This Cruise'), a[href*='book']"
+        "a:has-text('Book This Cruise'), "
+        "button[class*='heroItinerary'][class*='buttons'], "
+        "button:has-text('CONTINUE'), button:has-text('Continue'), "
+        "a[href*='cruisebooking'], a[href*='booking.princess']"
     )
+    LIGHTBOX_OVERLAY = "[class*='lightbox-overlay'], [data-test-id='handleLightbox']"
     SHIP_NAME = "[class*='ship-name'], [aria-label*='ship' i], a[href*='ship']"
     DEPARTURE_DATE = "[class*='departure'], [class*='sail-date'], [class*='date']"
     DURATION = "[class*='duration'], [class*='nights']"
@@ -40,5 +44,7 @@ class CruiseDetailPage(BasePage):
 
     @allure.step("Click Book Now")
     def click_book_now(self) -> None:
+        # Dismiss lightbox overlay if present
+        self._click_if_visible(self.LIGHTBOX_OVERLAY, timeout=3000)
         self.click(self.BOOK_NOW_BTN)
         self.wait_for_load_state("domcontentloaded")

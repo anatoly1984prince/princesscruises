@@ -100,7 +100,7 @@ class BookingPaymentPage(BasePage):
 
     def is_on_payment_page(self) -> bool:
         url = self.get_url().lower()
-        return any(k in url for k in ["payment", "review", "checkout", "confirm"])
+        return any(k in url for k in ["payment", "review", "checkout", "confirm", "/pay/", "/pay?", "/pay", "pay/"])
 
     @allure.step("Assert payment/review page loaded")
     def assert_loaded(self) -> None:

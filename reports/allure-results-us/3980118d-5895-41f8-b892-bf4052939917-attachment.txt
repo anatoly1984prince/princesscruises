@@ -1,0 +1,54 @@
+[error] Attestation check for Shared Storage on https://ara.paa-reporting-advertising.amazon failed.
+[error] Attestation check for Shared Storage on https://ara.paa-reporting-advertising.amazon failed.
+[warning] JQMIGRATE: jQuery.fn.resize() event shorthand is deprecated
+[warning] The resource https://www.princess.com/etc.clientlibs/global/clientlibs/clientlib-styles/resources/fonts/DomaineDisplay-Regular.ttf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/etc.clientlibs/princess/clientlibs/clientlib-site/resources/fonts/Lora-SemiBoldItalic.ttf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/etc.clientlibs/princess/clientlibs/clientlib-site/resources/fonts/Lora-MediumItalic.ttf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/etc.clientlibs/princess/clientlibs/clientlib-site/resources/fonts/RedHatTextVF.ttf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/etc.clientlibs/global/clientlibs/clientlib-styles/resources/fonts/DomaineDisplay-Bold.ttf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/etc.clientlibs/global/clientlibs/clientlib-styles/resources/fonts/DomaineDisplay-Regular.ttf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/etc.clientlibs/princess/clientlibs/clientlib-site/resources/fonts/Lora-SemiBoldItalic.ttf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/etc.clientlibs/princess/clientlibs/clientlib-site/resources/fonts/Lora-MediumItalic.ttf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/etc.clientlibs/princess/clientlibs/clientlib-site/resources/fonts/RedHatTextVF.ttf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/etc.clientlibs/global/clientlibs/clientlib-styles/resources/fonts/DomaineDisplay-Bold.ttf was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation
+[warning] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation
+[error] Attestation check for Shared Storage on https://ara.paa-reporting-advertising.amazon failed.
+[error] Attestation check for Attribution Reporting on https://www.facebook.com failed.
+[error] Attestation check for Shared Storage on https://ara.paa-reporting-advertising.amazon failed.
+[error] Attestation check for Shared Storage on https://ara.paa-reporting-advertising.amazon failed.
+[error] Attestation check for Shared Storage on https://ara.paa-reporting-advertising.amazon failed.
+[error] Attestation check for Shared Storage on https://ara.paa-reporting-advertising.amazon failed.
+[warning] JQMIGRATE: jQuery.fn.resize() event shorthand is deprecated
+[warning] A preload for 'https://www.princess.com/cruise-search/_next/static/css/629a8fdcba1ff0e66900.css' is found, but is not used because the request credentials mode does not match. Consider taking a look at crossorigin attribute.
+[error] Attestation check for Attribution Reporting on https://www.facebook.com failed.
+[error] Attestation check for Shared Storage on https://ara.paa-reporting-advertising.amazon failed.
+[warning] A preload for 'https://www.princess.com/cruise-search/_next/static/css/f7c388f943246cc48929.css' is found, but is not used because the request credentials mode does not match. Consider taking a look at crossorigin attribute.
+[error] Attestation check for Attribution Reporting on https://www.facebook.com failed.
+[error] Attestation check for Shared Storage on https://ara.paa-reporting-advertising.amazon failed.
+[error] Attestation check for Attribution Reporting on https://www.facebook.com failed.
+[warning] stateroomDetails is undefined or empty.
+[error] Attestation check for Shared Storage on https://ara.paa-reporting-advertising.amazon failed.
+[warning] JQMIGRATE: jQuery.isArray is deprecated; use Array.isArray
+[warning] JQMIGRATE: jQuery.fn.focus() event shorthand is deprecated
+[error] Opti-Account-level: ERROR - s_gi is not defined
+[warning] The resource https://www.princess.com/etc.clientlibs/princess/clientlibs/clientlib-all.lc-19e15183e83f31bae80cf51d03c55ccf-lc.min.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/assetroot/js/global/oneTrust/scripttemplates/202602.1.0/assets/otCommonStyles.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/etc.clientlibs/princess-base/clientlibs/clientlib-dependencies.lc-9ea123c63e1819901c7acf4fdb7f0753-lc.min.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/cruise-search/_next/static/css/629a8fdcba1ff0e66900.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/cruise-search/_next/static/css/f7c388f943246cc48929.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[error] Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+[error] Attestation check for Attribution Reporting on https://www.facebook.com failed.
+[warning] Event request via fetch failed, reverting to iframe
+[error] Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+[error] Attestation check for Shared Storage on https://ara.paa-reporting-advertising.amazon failed.
+[error] Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+[error] Attestation check for Shared Storage on https://ara.paa-reporting-advertising.amazon failed.
+[error] Attestation check for Shared Storage on https://ara.paa-reporting-advertising.amazon failed.
+[error] Attestation check for Shared Storage on https://ara.paa-reporting-advertising.amazon failed.
+[warning] The resource https://www.princess.com/etc.clientlibs/princess/clientlibs/clientlib-all.lc-19e15183e83f31bae80cf51d03c55ccf-lc.min.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/assetroot/js/global/oneTrust/scripttemplates/202602.1.0/assets/otCommonStyles.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/etc.clientlibs/princess-base/clientlibs/clientlib-dependencies.lc-9ea123c63e1819901c7acf4fdb7f0753-lc.min.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/etc.clientlibs/princess/clientlibs/clientlib-all.lc-19e15183e83f31bae80cf51d03c55ccf-lc.min.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/assetroot/js/global/oneTrust/scripttemplates/202602.1.0/assets/otCommonStyles.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[warning] The resource https://www.princess.com/etc.clientlibs/princess-base/clientlibs/clientlib-dependencies.lc-9ea123c63e1819901c7acf4fdb7f0753-lc.min.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.

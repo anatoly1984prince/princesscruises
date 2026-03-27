@@ -111,7 +111,10 @@ class BookingCabinPage(BasePage):
 
     def is_on_cabin_page(self) -> bool:
         url = self.get_url().lower()
-        return any(k in url for k in ["stateroom", "cabin", "book/", "booking/", "select-room"])
+        # Exclude guest-count page which contains 'stateroom' as a query param
+        if "guest-count" in url:
+            return False
+        return any(k in url for k in ["/stateroom", "/cabin", "book/", "booking/", "select-room"])
 
     def wait_for_cabin_page(self, timeout: int = 20000) -> bool:
         try:
@@ -120,7 +123,7 @@ class BookingCabinPage(BasePage):
         except PlaywrightTimeoutError:
             pass
         try:
-            self.page.wait_for_url("**/stateroom**", timeout=3000)
+            self.page.wait_for_url("**/stateroom/**", timeout=3000)
             return True
         except PlaywrightTimeoutError:
             pass

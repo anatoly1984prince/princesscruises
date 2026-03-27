@@ -7,27 +7,28 @@ from pages.base_page import BasePage
 
 
 class CruiseResultsPage(BasePage):
-    # product-card covers both skeleton (loading) and real cards on princess.com
-    CARD = "[class*='product-card']"
+    # princess.com cruise result cards
+    CARD = "[class*='product-grid-container']"
     CARD_SKELETON = "[class*='product-card'][class*='skeleton']"
-    CARD_TITLE = "[class*='product-card'] h2, [class*='product-card'] h3, [class*='product-card'] [class*='title']"
-    CARD_PRICE = "[class*='product-card'] [class*='price']"
-    CARD_SHIP  = "[class*='product-card'] [class*='ship']"
-    CARD_CTA   = "[class*='product-card'] a:has-text('View'), [class*='product-card'] a:has-text('Select'), [class*='product-card'] a"
+    CARD_TITLE = "[class*='product-grid-container'] [class*='product-details'] a"
+    CARD_PRICE = "[class*='product-grid-container'] [class*='price']"
+    CARD_SHIP  = "[class*='product-grid-container'] [class*='ship']"
+    CARD_CTA   = "[class*='product-grid-container'] a[href*='itinerary-details']"
     SORT_SELECT = "select[name*='sort' i], [aria-label*='sort' i] select, [class*='sort'] select"
     RESULTS_COUNT = "[class*='result-count'], [class*='results-found'], [aria-live='polite']"
     PAGINATION = "[class*='pagination'], nav[aria-label*='page' i]"
 
     def _wait_for_real_cards(self, timeout: int = 40000) -> bool:
-        """Wait for product cards to appear (includes skeleton/loading state)."""
-        # Scroll to trigger lazy-load
+        """Wait for at least one cruise card to be visible on the page."""
         self.page.evaluate("window.scrollTo(0, 400)")
         try:
-            self.page.locator(self.CARD).first.wait_for(
-                state="visible", timeout=timeout
+            self.page.wait_for_function(
+                "() => [...document.querySelectorAll(\"[class*='product-grid-container']\")]"
+                ".some(el => el.offsetParent !== null && el.getBoundingClientRect().height > 0)",
+                timeout=timeout,
             )
             return True
-        except PlaywrightTimeoutError:
+        except Exception:
             return False
 
     @allure.step("Assert cruise result cards visible (min: {min_count})")
@@ -43,7 +44,10 @@ class CruiseResultsPage(BasePage):
         assert count >= min_count, f"Expected >= {min_count} cruise cards, found {count}"
 
     def get_card_count(self) -> int:
-        return self.page.locator(self.CARD).count()
+        return self.page.evaluate(
+            "() => [...document.querySelectorAll(\"[class*='product-grid-container']\")]"
+            ".filter(el => el.offsetParent !== null).length"
+        )
 
     def has_results(self) -> bool:
         self._wait_for_real_cards(timeout=30000)
@@ -51,10 +55,26 @@ class CruiseResultsPage(BasePage):
 
     @allure.step("Click cruise card at index {index}")
     def click_card(self, index: int = 0) -> None:
-        card = self.page.locator(self.CARD).nth(index)
-        link = card.locator("a").first
-        link.click()
-        self.wait_for_load_state("domcontentloaded")
+        # Find all itinerary-details links on the page (visible ones)
+        links = self.page.locator("a[href*='itinerary-details']")
+        # Wait for at least one to be visible
+        try:
+            links.first.wait_for(state="visible", timeout=15000)
+        except Exception:
+            pass
+        clicked = 0
+        for i in range(links.count()):
+            try:
+                link = links.nth(i)
+                if link.is_visible():
+                    if clicked == index:
+                        link.click(timeout=15000)
+                        self.wait_for_load_state("domcontentloaded")
+                        return
+                    clicked += 1
+            except Exception:
+                continue
+        raise Exception(f"Could not click cruise card at index {index}")
 
     def get_card_title(self, index: int = 0) -> str:
         try:
